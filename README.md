@@ -5,6 +5,8 @@ Community Research Standard — a community-centered framework of 17 connected q
 trust, partnership practice, empowerment, and accountability in community-engaged research.
 
 **Live site:** https://derrickmirindi.github.io/Ethics_BSEC_MSU/
+<img width="1454" height="652" alt="image" src="https://github.com/user-attachments/assets/6491e230-0458-4b11-84ac-4f8818621b64" />
+
 
 Conceptualized by Derrick Mirindi & Tonya Sanders Thach
 School of Architecture and Planning, Morgan State University
