@@ -1,0 +1,85 @@
+/* BSEC brand, motion background, link design, and survey-dimensions table.
+   Layered on top of the built stylesheet (index-*.css). */
+:root{--gold:#fdc300}
+
+/* BSEC gold replaces the original red accent. The variable keeps its name (--red) because the
+   built stylesheet references it; in light mode it is a darker gold so accent text passes WCAG AA. */
+:root{--red:#8a6400;--red-soft:#fdf3cc}
+[data-theme=dark]{--red:#fdc300;--red-soft:#3a3218}
+.primary,[data-theme=dark] .primary{background:var(--gold);color:#171719}
+.primary:hover{background:#e8b200}
+.guides{background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 7px,#8a640014 7px,#8a640014 8px),repeating-linear-gradient(to bottom,transparent 0,transparent 23px,#8a640024 23px,#8a640024 24px);border-color:#8a640055}
+.guides .col{background:#8a640008;box-shadow:inset 1px 0 #8a640033}
+
+/* 3D motion background (bg-motion.js). Section fills are made translucent so it shows through. */
+#bg-motion{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block}
+@supports (background:color-mix(in srgb,red 50%,transparent)){
+  .masthead{background:color-mix(in srgb,var(--paper) 80%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.15);backdrop-filter:blur(14px) saturate(1.15)}
+  .framework-spread,.analysis-spread{background:color-mix(in srgb,var(--surface) 78%,transparent)}
+  footer{background:color-mix(in srgb,var(--surface) 86%,transparent)}
+  /* Frosted panels keep dense text readable over the motion field */
+  .hero-bottom,.section-description,.assessment-aside,.assessment-main,.dimensions-main{background:color-mix(in srgb,var(--paper) 86%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .section-description{padding:16px 20px;margin-inline:-20px}
+  .assessment-aside{padding:16px;margin-inline:-16px}
+  .assessment-main,.dimensions-main{padding:24px;margin-inline:-24px}
+  @media(max-width:640px){.section-description,.assessment-aside,.assessment-main,.dimensions-main{margin-inline:0;padding:16px}}
+}
+
+/* Brand */
+.brand{gap:14px}
+.brand-logo{height:52px;width:auto;display:block;flex-shrink:0}
+.brand .brand-sub{max-width:11em}
+@media(max-width:900px){.brand-logo{height:46px}}
+@media(max-width:640px){.brand-logo{height:40px}.brand{gap:10px}}
+
+/* Link design: a gold rule that draws in on hover and keyboard focus */
+.header-grid nav a{position:relative}
+.header-grid nav a::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.header-grid nav a:hover::after,.header-grid nav a:focus-visible::after{transform:scaleX(1);transform-origin:left}
+.text-link{background-image:linear-gradient(var(--gold),var(--gold));background-repeat:no-repeat;background-size:0 2px;background-position:0 calc(100% - 8px);transition:background-size .35s cubic-bezier(.2,.7,.2,1),color .2s}
+.text-link:hover,.text-link:focus-visible{background-size:100% 2px;color:inherit}
+.text-link i,.text-link svg{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.text-link:hover i,.text-link:hover svg{transform:translate(2px,-2px)}
+.button.primary{transition:transform .2s,box-shadow .2s}
+.button.primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px -10px var(--gold)}
+
+/* Survey dimensions section */
+.dimensions-spread .section-title h2{font-size:clamp(28px,2.9vw,40px);line-height:1.15}
+.dimensions-layout{padding-bottom:64px;row-gap:32px}
+.belmont-key{grid-column:1/5;display:flex;flex-direction:column;gap:12px;align-self:start;position:sticky;top:112px}
+.belmont-card{padding:16px 16px 18px;border:1px solid var(--line);background:color-mix(in srgb,var(--paper) 86%,transparent);border-radius:2px}
+.belmont-card h3{font-size:var(--body);line-height:24px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.belmont-card p{margin:0;font-size:var(--sm);color:var(--muted)}
+.belmont-card .count{font:var(--xs)/24px var(--mono);text-transform:uppercase;letter-spacing:.065em;color:var(--ink);margin-top:8px}
+.belmont-note{font-size:var(--xs);line-height:20px;color:var(--muted);margin:0}
+.dimensions-main{grid-column:5/13;min-width:0}
+.dimensions-table-wrap{overflow-x:auto}
+.dimensions-table{width:100%;min-width:620px;border-collapse:collapse;font-size:var(--sm);line-height:24px;text-align:left}
+.dimensions-table caption{text-align:left;font-size:var(--xs);color:var(--muted);padding-bottom:12px}
+.dimensions-table th{font:var(--xs)/24px var(--mono);text-transform:uppercase;letter-spacing:.065em;color:var(--muted);padding:0 12px 12px 0;border-bottom:1px solid var(--ink);vertical-align:bottom}
+.dimensions-table td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.dimensions-table tbody tr{transition:background-color .2s}
+.dimensions-table tbody tr:hover{background:color-mix(in srgb,var(--gold) 9%,transparent)}
+.dimensions-table td:first-child{width:36%;font-weight:600}
+.q-id{display:inline-block;min-width:2.6em;font:var(--xs)/24px var(--mono);color:var(--muted);font-weight:400}
+.src{display:block}
+.src+.src{margin-top:4px}
+.src-type{display:block;font:var(--xs)/20px var(--mono);text-transform:uppercase;letter-spacing:.065em;color:var(--muted)}
+.principle{display:inline-flex;align-items:center;gap:8px;padding:1px 10px 1px 8px;border:1px solid var(--line);border-radius:999px;font-size:var(--xs);line-height:22px;white-space:nowrap;margin:0 6px 6px 0}
+.principle::before{content:"";width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.principle.rp::before{background:var(--ink)}
+.principle.b::before{background:var(--gold);box-shadow:0 0 0 1px #00000026}
+.principle.j::before{background:transparent;box-shadow:inset 0 0 0 2px var(--ink)}
+.dimensions-sources{margin-top:32px;font-size:var(--xs);line-height:20px;color:var(--muted)}
+.dimensions-sources h3{font:var(--xs)/24px var(--mono);text-transform:uppercase;letter-spacing:.065em;color:var(--ink);margin:0 0 8px}
+.dimensions-sources ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.dimensions-sources a{color:inherit;text-underline-offset:2px}
+.dimensions-sources a:hover{color:var(--ink)}
+.dimensions-sources p{margin:12px 0 0}
+@media(max-width:1180px){.belmont-key{grid-column:1/-1;position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.belmont-note{grid-column:1/-1}.dimensions-main{grid-column:1/-1}}
+@media(max-width:640px){.belmont-key{grid-template-columns:1fr}.dimensions-layout{padding-bottom:40px}}
+
+@media(prefers-reduced-motion:reduce){
+  .header-grid nav a::after,.text-link,.text-link i,.text-link svg,.button.primary,.dimensions-table tbody tr{transition:none}
+}
+@media print{#bg-motion{display:none}}
