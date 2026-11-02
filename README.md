@@ -11,39 +11,7 @@ trust, partnership practice, empowerment, and accountability in community-engage
 Conceptualized by Derrick Mirindi & Tonya Sanders Thach
 School of Architecture and Planning, Morgan State University
 
-## Sections
 
-| Section | Purpose |
-| --- | --- |
-| Overview | Framing, interactive 3D model of the framework, headline counts |
-| Framework | The 17 questions grouped into five domains, filterable, with per-question detail |
-| Assessment | Step-by-step reflection with progress tracking and local draft saving |
-| Analysis | Domain means, distributions, item table, reading guidance, action prompts, exports |
-| Dimensions | Survey dimensions (Q3–Q15), their framework sources, and their relation to the Belmont principles |
-
-## Repository layout
-
-```
-index.html            page markup, metadata, and section content
-bsec-logo.webp        BSEC logo (header)
-favicon.png           site icon; apple-touch-icon.png for iOS home screens
-bsec-updates.css      brand, link design, motion background and dimensions-table styles
-bg-motion.js          3D motion background (WebGL, no dependencies; honors reduced motion)
-index-*.css           built stylesheet
-index-*.js            built JavaScript bundle (loads scene-*.js on demand)
-inter-*.woff2   Inter web fonts
-.nojekyll       serve files as-is on GitHub Pages (no Jekyll processing)
-```
-
-All asset references in `index.html` are relative (`./file`), so the site works from the
-repository subpath on GitHub Pages as well as from any other directory.
-
-## Local preview
-
-```bash
-python3 -m http.server 8000
-# then open http://localhost:8000/
-```
 
 ## Notes on responsible use
 
