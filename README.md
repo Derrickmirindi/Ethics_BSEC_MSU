@@ -1,7 +1,7 @@
 # BSEC / Community Research Standard
 
 Interactive educational website for the BSEC (Baltimore Social-Environmental Collaborative)
-Community Research Standard — a community-centered framework of 17 connected questions on
+Community Research Standard, a community-centered framework of 17 connected questions on
 trust, partnership practice, empowerment, and accountability in community-engaged research.
 
 **Live site:** https://derrickmirindi.github.io/Ethics_BSEC_MSU/
